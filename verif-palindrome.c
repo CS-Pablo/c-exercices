@@ -6,14 +6,13 @@
 /*   By: csauron <csauron@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 23:22:25 by csauron           #+#    #+#             */
-/*   Updated: 2025/03/18 23:26:12 by csauron          ###   ########.fr       */
+/*   Updated: 2025/03/19 04:10:10 by csauron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-
 
 void nettoyer_chaine(char *chaine, char *chaine_nettoyee)
 {
@@ -33,11 +32,13 @@ int est_palindrome(char *chaine)
     int debut = 0;
     int fin = strlen(chaine) - 1;
 
-    while (debut < fin) {
-        if (chaine[debut] != chaine[fin]) {
+    while (debut < fin)
+    {
+        if (*chaine++ != chaine[fin])
+        {
             return 0;
         }
-        debut++;
+        chaine++;
         fin--;
     }
     return 1;
